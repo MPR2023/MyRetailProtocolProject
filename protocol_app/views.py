@@ -17,6 +17,7 @@ from users.models import CustomUser
 from typing import Union
 from django.contrib.auth.models import AbstractBaseUser, AnonymousUser
 import logging
+import json
 import os
 
 # Initialize logger
@@ -67,6 +68,26 @@ def unified_chat_endpoint(request):
     except Exception as e:
         logger.error(f"An error occurred: {e}")  # Logging the exception
         return JsonResponse({"error": f"An error occurred: {e}"})
+
+
+@api_view(['POST'])
+def fetch_protocol_based_on_location(request):
+    try:
+        data = json.loads(request.body)
+        beacon_name = data.get('beacon', {}).get('name')
+        beacon_address = data.get('beacon', {}).get('address')
+        
+        # Your logic to find the protocol based on beacon_name and beacon_address
+        if beacon_name == "MyBLEDevice" and beacon_address == "94:B5:55:C0:6B:7A":
+            protocol_file_path = os.path.join('protocols', 'admin', 'your_specific_protocol_file.txt')  # Replace with actual file name
+            with open(protocol_file_path, 'r') as f:
+                protocol_data = f.read()
+        
+            return JsonResponse({'protocol': protocol_data})
+        else:
+            return JsonResponse({'error': 'Beacon not recognized'})
+    except Exception as e:
+        return JsonResponse({'error': str(e)})
 
 # Rest of your code for ProtocolViewSet etc. stays the same
 
