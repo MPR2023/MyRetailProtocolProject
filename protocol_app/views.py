@@ -89,8 +89,6 @@ def fetch_protocol_based_on_location(request):
     except Exception as e:
         return JsonResponse({'error': str(e)})
 
-# Rest of your code for ProtocolViewSet etc. stays the same
-
 class ProtocolViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
     queryset = Protocol.objects.all().order_by('-last_updated')
