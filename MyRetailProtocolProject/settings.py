@@ -17,7 +17,7 @@ import logging
 from dotenv import load_dotenv
 load_dotenv()
 
-logging.disable(logging.CRITICAL)
+# logging.disable(logging.CRITICAL)
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
