@@ -44,7 +44,7 @@ GPT3_API_KEY = config("GPT3_API_KEY")
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.68.129', '192.168.69.109']
 
 
 # Application definition
