@@ -1,100 +1,125 @@
-FIȘA DE POST - MANAGER
+fisa de post - manager general
 
-Denumirea compartimentului: 
-Conducere
-Denumirea postului: 
-Manager
-Numele și prenumele salariatului: 
+denumirea compartimentului:
+conducere
+
+denumirea postului: 
+manager general 
+
+se subordoneaza: 
+administratiei companiei
+
+subordoneaza:
+managerul adjunct
+managerul financiar
+operatorul calculator
+lucratorii comerciali
+casieri
+
+drept de semnatura: 
+intern, in cadrul companiei.
 
 
-Se subordonează: 
-Managerului General și Administratorului companiei 
-Numele șefului ierarhic: 
+pregatirea si experienta: 
+pregatirea necesara postului de munca: 
+de baza: studii superioare de profil economic;
+cursuri speciale: marketing, vanzari, management organizational, management financiar. operare pc-office,
 
+competentele postului de munca:
 
-Subordonează: 
+cunostinte si deprinderi:
 
-Pregătirea și experiență: 
-Pregătirea necesară postului de muncă: 
-Cursuri speciale: marketing, vânzări, management organizațional, operare PC-Office,
-Participa la cursuri de leadership, management și vânzări, puse la dispoziție de companie;
- 
-Competențele postului de muncă: 
-Cunoștințe și deprinderi: 
-Cunoștințe de management organizațional, vânzări;
-Cunoașterea în profunzime a pieței locale FMCG;
-Cunoașterea legislației în domeniu; 
-Stăpânirea unor tehnici și instrumente financiar-contabile;
-Cerințe aptitudinale: 
-nivel de inteligență generală peste medie (capacitate de sinteză și de analiză, judecată rapidă); 
-aptitudine generală de învățare; 
-aptitudini de comunicare; 
-aptitudini de calcul; 
-aptitudinea de a lucra cu documente; 
-planificare și organizare a operațiilor și activităților; 
-abilități de negociere; 
-acordare și transmitere de informații; 
-vocabular bogat; 
-atenție selectivă, concentrată și distributivă;
-Cerințe comportamentale: 
-capacități persuasive; 
+cunostinte de management organizational, financiar, vanzari;
+cunoasterea in profunzime a pietei locale de fmcg; 
+cunoasterea legislatiei in domeniu;
+stapanirea unor tehnici si instrumente financiar-contabile;
+
+cerinte aptitudinale:
+nivel de inteligenta generala peste medie (capacitate de sinteza si de analiza, judecata rapida);
+generala de invatare;
+aptitudini de comunicare;
+aptitudini de calcul;
+aptitudinea de a lucra cu documente;
+planificare si organizare a operatiilor si activitatilor;
+abilitati de negociere;
+acordare si transmitere de informatii;
+vocabular bogat;
+atentie selectiva, concentrata si distributiva;
+cerinte comportamentale:
+capacitati persuasive;
 capacitate de coordonare;
-responsabilitate personală; 
-capacitate de planificare și organizare; 
-eficiență personală; 
-spirit de echipă; 
-comportament etic, integru și politicos; 
-Autoritate și libertate organizatorică: 
-Are acces la date financiare ale firmei
-Solicita si utilizeaza echipamentele/consumabilele puse la dispozitie de firma
-Responsabilități și sarcini: 
-Condiții materiale ale muncii: 
-instrumente specifice muncii de birou (imprimantă, telefon mobil)
-Sarcini și atribuții ale postului de muncă:
-Stabilește obiectivele generale ale firmei în concordanță cu strategia elaborată de administrator: 
-Comunică personalului obiectivele generale și specifice previzionate pentru fiecare departament și urmărește ca acestea să fie pusa în practica.
-Identifică oportunități de afaceri: 
-Identifică modalități de dezvoltare a serviciilor oferite de firmă în concordanță cu tendințele pieței; 
-Identifică și atrage resursele necesare pentru implementarea noilor idei de afaceri; 
-Reprezintă firma în relațiile protocolare cu furnizorii, clienții și alte organizații cu impact real/potențial asupra rezultatelor firmei: 
-Asigură o bună imagine a firmei pe piață; 
-Identificarea oportunităților de investiție și obținere de profit; 
-Participă la întâlniri de afaceri cu furnizori, organisme financiare și instituții guvernamentale din țară și din străinătate;
-Dezvoltă relații pozitive cu persoane-cheie în vederea întăririi poziției firmei;
-Asigură managementul firmei: 
-Reprezintă organizația în relațiile cu terțe persoane fizice sau juridice în conformitate cu împuternicirea acordată de administrator. 
-Gestionarea și gospodărirea patrimoniului organizației în interesul acesteia, In conformitate cu împuternicirea acordată de administrator.
-Urmărirea îndeplinirii condițiilor igienico-sanitare, de protecție a muncii, de prevenire și stingere a incendiilor, prevăzute de reglementările și normele legislative în vigoare; 
-Preocuparea pentru conservarea și dezvoltarea bazei materiale a organizației; 
-Efectuarea de investigații periodice cu privire la calitatea muncii prestate în cadrul organizației (avizarea evaluărilor individuale anuale); 
-Controlul și supervizarea activității departamentelor de vânzări și marketing, economic, tehnic, resurse umane; 
-Urmărirea aplicării acurate a deciziilor luate și evaluarea efectelor acesteia; 
-Asumarea responsabilității pentru deciziile eronate sau nefondate, prin suportarea, după caz, a unor penalități bănești; 
-Identifică nevoile de recrutare și participă la selecția, integrarea și dezvoltarea managementului firmei;
-Asigurarea implicării în activitatea organizațională a propriei persoane, cât și a personalului din subordine prin crearea unui cadru propice dezvoltării personale și a unui climat stimulativ al performanțelor.
-Stabilește obiectivele personalului din subordine, termenele-limită și modalitățile de măsurare a gradului de realizare a obiectivelor;
-Aprobă procedurile de interes general ale firmei (aprovizionare, vânzare);
-Dezvoltă mijloace de motivare a personalului din subordine; 
-Asigură un climat de comunicare și încurajare a inițiativei care să contribuie la atingerea obiectivelor stabilite; 
-Evaluează periodic activitatea personalului din subordine;
-Asigură respectarea normelor interne de funcționare de către personalul din subordine;
-Stabilește măsuri de eficientizare a activității personalului din subordine; 
-Supraveghează în permanenta funcționarea utilajelor si a instalațiilor din dotarea unității.
-Verificare procese verbale si facturile roșii de la furnizori si facturi de discount, mezeluri lactate si băuturi;
-Reorganizarea display;
-Comenzi la furnizorii:
-Controlul și construcția preturilor de raft la produse de la furnizorii:
-Negociere produse promoționale si discount-uri cu furnizorii:
-Organizarea echipei in momentele critice ale magazinului;
-Participarea la recepționarea mărfii, in momentele critice;
-Disponibilitate la program prelungit, disponibilitate la program sâmbătă in cazuri critice;
-Asigură rețeaua de relații necesară dezvoltării activității firmei: 
-Evaluează potențialul furnizorilor, a produselor și al clienților;
-Stabilește posibile căi de colaborare și decide asupra parteneriatelor strategice; 
-Dezvoltă relații pozitive cu personalul firmei în vederea motivării și a creșterii gradului de implicare în activitatea firmei; 
-Răspunde de întocmirea corecta a tuturor dispozițiilor pe care le primește de la conducerea executiva a societății.
-Autoritatea postului:
-Solicită rapoarte de activitate și ia măsurile necesare în vederea creșterii eficienței activității firmei; 
-Stabilește prioritatea executării sarcinilor pentru personalul din subordine; 
-Sancțiuni pentru nerespectarea fișei postului sau a anexelor acestora: 
-Dacă este cazul
+responsabilitate personala;
+capacitate de planificare si organizare;
+eficienta personala;
+spirit de echipa;
+comportament etic/integritate; 
+autoritate si libertate organizatorica:
+libertatea organizarii a activitatii oamenilor din subordine;
+
+responsabilitati si sarcini:
+conditii materiale ale muncii:
+instrumente specifice muncii de birou (imprimanta, telefon mobil);
+sarcini si atributii ale postului de munca:
+stabileste obiectivele generale ale firmei in concordanta cu strategia elaborata de consiliul de administratie:
+stabileste anual, impreuna cu sefii de departamente, obiectivele generale de dezvoltare;
+monitorizeaza trimestrial/ semestrial/anual gradul de realizare a obiectivelor;
+stabileste obiective personale (indicatori de performanta) si pentru top-management in stricta concordanta cu obiectivele firmei;.
+identifica oportunitati de afaceri:
+monitorizeaza piata si identifica tendintele de dezvoltare;
+analizeaza oportunitatile/constrangerile de ordin legislativ, financiar, tehnologic si social din mediul de afaceri al firmei;
+identifica modalitati de dezvoltare a serviciilor oferite de firma in concordanta cu tendintele pietei;
+identifica si atrage resursele necesare pentru implementarea noilor idei de afaceri;
+reprezinta firma in relatiile protocolare cu furnizorii, clientii si alte organizatii cu impact real/potential asupra rezultatelor firmei:
+asigura o buna imagine a firmei pe piata;
+identificarea oportunitatilor de investitie si obtinere de profit;
+participa la intalniri de afaceri cu furnizori, clienti, organisme financiare si institutii guvernamentale din tara.
+dezvolta relatii pozitive cu persoane-cheie in vederea intaririi pozitiei firmei;
+asigura managementul firmei:
+reprezinta organizatia in relatiile cu terte persoane fizice sau juridice in conformitate cu imputernicirea acordata de administrator;
+gestionarea si gospodarirea patrimoniului organizatiei in interesul acesteia;
+urmarirea indeplinirii conditiilor igienice-sanitare, de protectie a muncii, de prevenire si stingere a incendiilor, prevazute de reglementarile si normele legislative in vigoare;
+preocuparea pentru conservarea si dezvoltarea bazei materiale a organizatiei;
+supervizarea aplicarii corecte a codului muncii si a reglementarilor legislative privind operatiunile financiar-contabile (apelarea la serviciile de consultanta si consiliere ale consultantului juridic si ale directorului economic);
+efectuarea de investigatii periodice cu privire la calitatea muncii prestate in cadrul organizatiei (avizarea evaluarilor individuale anuale);
+controlul si supervizarea activitatii departamentelor de vanzari si marketing, economic, tehnic;
+urmarirea aplicarii acurate a deciziilor luate si evaluarea efectelor acesteia;
+asumarea responsabilitatii pentru deciziile eronate sau nefondate, prin suportarea, dupa caz, a unor penalitati banesti;
+asigurarea implicarii in activitatea organizationala a propriei persoane, cat si a personalului din subordine prin crearea unui cadru propice dezvoltarii personale si a unui climat stimulativ al performantelor;
+comunica managementului valorile si obiectivele strategice ale firmei;
+stabileste obiectivele managerilor din subordine, termenele-limita si modalitatile de masurare a gradului de realizare a obiectivelor;
+aproba procedurile de interes general ale firmei (aprovizionare, vanzare, distributie, financiare, resurse umane);
+dezvolta mijloace de motivare a personalului din subordine;
+asigura un climat de comunicare si incurajare a initiativei care sa contribuie la atingerea obiectivelor stabilite;
+identifica nevoile de recrutare si participa la selectia, integrarea si dezvoltarea managementului firmei;
+participa la programele de elaborare si actualizare a fiselor de post ale managerilor din subordine daca este cazul;
+evalueaza periodic activitatea managerilor din subordine;
+negociaza si conciliaza situatiile conflictuale aparute in relatiile interpersonale;
+aproba planificarea concediilor de odihna pentru angajatii din subordine;
+asigura respectarea normelor interne de functionare de catre personalul din subordine;
+stabileste masuri de eficientizare a activitatii personalului din subordine;
+supravegheaza in permanenta functionarea utilajelor si a instalatiilor din dotarea unitatii.
+verificare procese verbale si facturile rosii de la furnizori si facturi de discount, mezeluri lactate si bauturi;
+reorganizarea display;
+comenzi la furnizorii:
+controlul si constructia preturilor de raft la produse de la furnizorii:
+negociere produse promotionale si discount-uri cu furnizorii:
+organizarea echipei in momentele critice ale magazinului;
+participarea la receptionarea marfii, in momentele critice;
+disponibilitate la program prelungit, disponibilitate la program sambata in cazuri critice;
+asigura reteaua de relatii necesara dezvoltarii activitatii firmei:
+evalueaza potentialul furnizorilor si al clientilor;
+stabileste posibile cai de colaborare si decide asupra parteneriatelor strategice;
+dezvolta relatii pozitive cu personalul firmei in vederea motivarii si a cresterii gradului de implicare in activitatea firmei;
+orice alta sarcina trasata de consiliul de administratie in functie de necesitatile organizationale;
+ 
+autoritatea postului:
+decide asupra noilor directii de dezvoltare;
+semneaza organigrama si statutul de functiuni al firmei;
+semneaza contracte cu furnizorii, clientii si partenerii strategici;
+solicita rapoarte de activitate si ia masurile necesare in vederea cresterii eficientei activitatii firmei;
+stabileste prioritatea executarii sarcinilor pentru personalul din subordine;
+aproba recompense/penalizari, prelungirea/incetarea activitatii dupa perioada de proba a angajatilor;
+aproba/respinge cereri ale personalului din subordine;
+
+sanctiuni pentru nerespectarea fisei postului sau a anexelor acestora:
+daca este cazul

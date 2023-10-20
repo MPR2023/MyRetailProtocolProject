@@ -111,8 +111,14 @@ WSGI_APPLICATION = 'MyRetailProtocolProject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'CogniSteer',
+        'CLIENT': {
+            'host': 'mongodb+srv://paulmotorca:Zizou2003@cognisteer.eykykjc.mongodb.net/',
+            'username': 'paulmotorca',
+            'password': 'Zizou2003',
+            'authMechanism': 'SCRAM-SHA-1',
+        }
     }
 }
 
