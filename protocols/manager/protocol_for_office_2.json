@@ -1,106 +1,122 @@
 {
-    "title": "fisa de post \u2013 operator calculator",
-    "denumirea compartimentului": "birou introducere receptii si contabilitate primara",
-    "denumirea postului": "operator calculator",
-    "se subordoneaza": "managerului si managerului financiar",
-    "subordoneaza": "toti lucratorii comerciali",
-    "relatii functionale": [
-        "colegii din depozit pentru preluarea comenzilor",
-        "colegii de pe magazin din celelalte departamente"
-    ],
-    "competentele postului de munca, cunostinte si deprinderi": [
-        "cunoasterea programului in care se lucreaza",
-        "cunoasterea programului de incasare prezent la casele de marcat",
-        "cunoasterea produselor",
-        "atentie dezvoltata pe partea de lucru la calculator"
-    ],
-    "cerinte aptitudinale": [
-        "capacitate de a lua decizii",
-        "aptitudine generala de invatare",
-        "aptitudini de comunicare",
-        "perceptie vizuala",
-        "atentie",
-        "concentrare",
-        "mobilitate",
-        "distributivitate",
-        "selectivitate",
-        "rapiditate",
-        "spirit practic",
-        "coordonare manuala buna",
-        "memorie vizuala buna",
-        "motivat",
-        "dorinta de a munci",
-        "rezistenta la sarcini repetitive",
-        "rezistenta la oboseala",
-        "aspect fizic placut"
-    ],
-    "cerinte comportamentale": [
-        "pastreaza confidentialitatea secretului de salar",
-        "punctualitate",
-        "atitudine proactiva in munca de echipa si inclinatii catre respect fata de colegi",
-        "autocontrol mediu",
-        "capacitati persuasive",
-        "capacitate de coordonare",
-        "capacitate de planificare si organizare",
-        "responsabilitate personala",
-        "eficienta personala",
-        "spirit de echipa",
-        "capacitatea de a munci in echipa",
-        "capacitatea de a se descurca in conditii de stres",
-        "comportament etic",
-        "integru si politicos",
-        "implicat in activitate",
-        "comportament civilizat si respectuos fata de colegi,clienti si furnizori"
-    ],
-    "responsabilitati si sarcini": [
-        "in lipsa managementului companiei raspund de buna desfasurare a activitatii",
-        "in lipsa managementului companiei verifica ca marfa intrata in ziua respectiva sa fie scoasa in magazin dupa verificarea preturilor de catre colegii de pe raioane",
-        "verifica ca muzica ambientala sa fie pornita",
-        "verifica nivelul de aglomeratie la casa de marcat si ia decizii in functie de situatie",
-        "verifica raionul de legume fructe periodic",
-        "verifica si actualizeaza registrul de casa si raportul de gestiune",
-        "verifica in fiecare seara buna functionare a aparatelor frigorifice si anunta in caz de defectiune",
-        "umple la frigiderul de oua cand e cazul",
-        "ajuta la preluarea marfii cand este nevoie",
-        "preia incasarile si monetarul de la casiere",
-        "inchid si deschid magazinul la orele stabilite in program",
-        "inlocuieste personalul de la mezeluri si de la casa de marcat cand e nevoie",
-        "verifica personalul la iesirea din tura",
-        "semneaza produsele cumparate de angajati pentru consum propriu",
-        "in cazuri speciale participa la umplerea raionului de legume fructe",
-        "raspunde de comanda de comanda zilnica de paine",
-        "supravegheaza periodic activitatea din magazin si clientii care ar putea crea pagube",
-        "participa la curatenia generala de inchidere a magazinului",
-        "obligatia de a anunta din timp concediul de odihna(minim 2 luni anticipat)",
-        "pastreaza curatenia in magazin",
-        "obligatia de a nu fuma decat in locurile indicate de conducere",
-        "parasesc incinta locului de munca doar cu acordul sefului ierarhic",
-        "obligatia de a nu consuma produse din stocul firmei fara a le plati in prealabil",
-        "daca folosesc scari ajutatoare pentru a lua marfa la inaltime o fac pe raspundere proprie",
-        "in caz de boala concediul medical trebuie prezentat la sediul firmei in maxim 48 de ore de la emitere",
-        "participa la descarcat/preluat marfa impreuna cu persoanele desemnate",
-        "participa la inventarul anual"
-    ],
-    "atributii": [
-        "sa foloseasca timpul de munca exclusiv pentru indeplinirea sarcinilor de serviciu",
-        "sa verifice conformitatea datelor introduse in calculator, cu datele din documentele/mediile primare",
-        "sa selecteze si sa verifice datele inainte de a le introduce in calculator",
-        "sa se asigure ca materialele in curs de prelucrare sunt in ordine si bine organizate",
-        "sa pastreze si sa arhiveze informatiile si materialele in format electronic, in conditii de siguranta si securitate",
-        "sa pastreze si sa arhiveze documentele in format hartie, in conditii de siguranta si securitate",
-        "sa ajute in operatiunile de intretinere a echipamentelor de birou si sa semnaleze orice defec\u0163iuni",
-        "sa respecte cu strictete instructiunile de lucru, cu privire la modul de operare a echipamentelor de birou si sa ia masuri pentru prevenirea accidentelor si deteriorarilor",
-        "sa semnaleze orice neconformitate si sa propuna masuri de remediere"
-    ],
-    "responsabilitatile postului": [
-        "raspunde de buna coordonare a activitatii in lipsa managementului companiei",
-        "raspunde de conditiile de igiena a marfii",
-        "raspunde de rezolvarea problemelor si de satisfacerea cerintelor clientului",
-        "respecta instructiunile verbale si scrise date de superiori",
-        "raspunde de raportarea pierderilor de orice fel (rebuturi, furturi)",
-        "raspunde de corectitudinea datelor introduse in calculator"
+    "titlul": "fisa de post - manager financiar",
+    "departament": "Management",
+    "denumirea postului": "Manager Financiar",
+    "se subordoneaza": "Managerului General",
+    "subordoneaza": "Operator Calculator",
+    "pregatirea si experienta": {
+        "pregatirea necesara postului de munca": {
+            "studii de baza": [
+                "Studii de profil economic"
+            ],
+            "cursuri speciale": [
+                "Management Financiar",
+                "Vanzari",
+                "Management Organizational",
+                "Operare PC-Office"
+            ]
+        }
+    },
+    "competentele postului de munca": {
+        "cunostinte si deprinderi": [
+            "Cunostinte de management financiar",
+            "Cunoasterea in profunzime a pietei fmcg, precum si nevoile financiare ale acesteia",
+            "Cunoasterea legislatiei in domeniu",
+            "Stapanirea unor tehnici si instrumente financiar-contabile"
+        ],
+        "cerinte aptitudinale": [
+            "Nivel de inteligenta generala peste medie (capacitate de sinteza si de analiza, judecata rapida)",
+            "Capacitate generala de invatare",
+            "Bune aptitudini de comunicare",
+            "Bune aptitudini de calcul",
+            "Bune aptitudinea de a lucra cu documente",
+            "Bune aptitudini de planificare si organizare a operatiilor si activitatilor",
+            "Bune abilitati de acordare si transmitere de informatii",
+            "Vocabular bogat",
+            "Atentie selectiva, concentrata si distributiva"
+        ],
+        "cerinte comportamentale": [
+            "Pastreaza confidentialitatea secretului de salar",
+            "Capacitati persuasive",
+            "Capacitate de coordonare",
+            "Responsabilitate personala",
+            "Capacitate de planificare si organizare",
+            "Eficienta personala",
+            "Spirit de echipa",
+            "Comportament etic/integritate",
+            "Comportament civilizat si respectuos fata de colegi, clienti si furnizori"
+        ],
+        "autoritate si libertate organizatorica": [
+            "Are acces la date financiare ale firmei",
+            "Solicita si utilizeaza echipamentele/consumabilele puse la dispozitie de firma"
+        ]
+    },
+    "responsabilitati si sarcini": {
+        "conditii materiale ale muncii": [
+            "Instrumente specifice muncii de birou (imprimanta, calculator, laptop, telefon mobil)"
+        ],
+        "sarcini si atributii ale postului de munca": [
+            "Stabileste obiectivele generale ale firmei in concordanta cu strategia elaborata de consiliul de administratie",
+            "Impreuna cu sefii de departamente participa la stabilirea obiectivelor generale de dezvoltare",
+            "Identifica oportunitati de afaceri",
+            "Monitorizeaza piata si identifica tendintele de dezvoltare financiara, sau de reducere a costurilor",
+            "Analizeaza oportunitatile/constrangerile de ordin financiar",
+            "Identifica modalitati de evolutie si dezvoltare financiara",
+            "Identifica, dezvolta si adapteaza sistemele financiare ale companiei, pentru o mai buna si mai rapida coordonare a departamentelor, precum si pentru optimizarea si reducerea costurilor",
+            "Reprezinta firma in relatiile protocolare cu furnizorii, clientii si alte organizatii cu impact real/potential asupra rezultatelor firmei",
+            "Asigura o buna imagine a firmei pe piata",
+            "Identificarea oportunitatilor de investitie si obtinere de profit, precum si reducere a costurilor",
+            "Participa la intalniri de afaceri cu furnizori, clienti, organisme financiare si institutii guvernamentale din tara",
+            "Dezvolta relatii pozitive cu persoane-cheie in vederea intaririi pozitiei firmei",
+            "Dezvolta mijloace de motivare a personalului din subordine",
+            "Asigura un climat de comunicare si incurajarea initiativei care sa contribuie la atingerea obiectivelor stabilite",
+            "Asigura respectarea normelor interne de functionare de catre personalul din subordine",
+            "Stabileste masuri de eficientizare a activitatii personalului din subordine",
+            "Comenzi la furnizori",
+            "Participarea la receptionarea marfii, in momentele critice",
+            "Disponibilitate la program prelungit, disponibilitate la program sambata in cazuri critice",
+            "Asigura reteaua de relatii necesara dezvoltarii activitatii firmei",
+            "Evalueaza potentialul furnizorilor si al clientilor",
+            "Dezvolta relatii pozitive cu personalul firmei in vederea motivarii si a cresterii gradului de implicare in activitatea firmei",
+            "Orice alta sarcina trasata de managerul general in functie de necesitatile organizationale"
+        ],
+        "asigura managementul firmei": [
+            "Reprezinta organizatia in relatiile cu terte persoane fizice sau juridice in conformitate cu imputernicirea acordata de administrator",
+            "Gestionarea si gospodarirea patrimoniului organizatiei in interesul acesteia",
+            "Supervizarea aplicarii corecte a codului fiscal si a reglementarilor legislative privind operatiunile financiar-contabile (apelarea la serviciile de consultanta si consiliere ale consultantului juridic)",
+            "Controlul si supervizarea activitatii departamentului economic"
+        ],
+        "organizare si supravegherea bunei functionari a sistemului de receptie": [
+            "Supravegherea dezvoltarii sistemului de receptie",
+            "Supravegherea realizarii contabilitatii primare",
+            "Realizarea de receptii",
+            "Realizarea contabilitatii primare",
+            "Evidenta la casele de marcat monetare",
+            "Verificare monetar si pregatirea banilor pentru banca (in concediile patronilor)",
+            "Organizare gunoi menajer si reciclare (avize cartoane, intocmire facturi conform avize reciclare, etc)",
+            "Urmarirea incasarii fc emise catre clienti"
+        ],
+        "organizarea si gestionarea arhivei si administrarea actelor necesare personalului angajat": [
+            "Angajare (contracte de munca si fisa de post, regulament de ordine interioara, etc.)",
+            "Programarile la liad pentru analizele necesare la angajare, evidenta avizelor de la medicina muncii, precum si a programarilor necesare controlului medical periodic",
+            "Lichidari contracte de munca (problemele care tin de acestea) cu instiintarea managerului general",
+            "Comanda carduri tichete si bancare, incarcarea cardurilor de tichete (organizarea protocoalelor ce tin de comenzile de carduri)",
+            "Operarea concediilor medicale si tot ce tine de acestea, cu instiintarea managerului general",
+            "Organizarea concedii platite si tot ce tine de acestea cu aprobarea managerului general",
+            "Realizarea de adeverinte pentru personal (medic, gradinita, etc)",
+            "Arhivarea dosarelor care nu tin de angajati si/sau de furnizori",
+            "Instructaj si fise de protectia muncii",
+            "Instruirea personalului pentru dsv, dsp",
+            "Verificarea realizarii graficelor lunare pentru temperatura si umiditate vitrine",
+            "Urmarirea aplicarii acurate a deciziilor luate si evaluarea efectelor acesteia",
+            "Asumarea responsabilitatii pentru deciziile eronate sau nefondate, prin suportarea, dupa caz, a unor penalitati banesti",
+            "Asigurarea implicarii in activitatea organizationala a propriei persoane, cat si a personalului din subordine prin crearea unui cadru propice dezvoltarii personale si a unui climat stimulativ al performantelor"
+        ]
+    },
+    "autoritatea postului": [
+        "Solicita rapoarte de activitate financiare si ia masurile necesare in vederea cresterii eficientei fiscale ale firmei"
     ],
     "sanctiuni pentru nerespectarea fisei postului sau a anexelor acestora": [
-        "nerespectarea confidentialitatii salariului sanctiunea este desfacerea contraculuI de munca"
+        "Daca este cazul, in legatura cu confidentialitatea salariului, sanctiunea este desfacerea contractului de munca"
     ]
 }
