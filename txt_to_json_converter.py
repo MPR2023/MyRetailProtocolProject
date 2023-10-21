@@ -1,141 +1,219 @@
 import json
 
 # The content of your 'protocol_for_office.txt' file
-txt_content = """fisa de post – operator calculator
+txt_content = """fisa de post - manager adjunct
 
 denumirea compartimentului: 
-birou introducere receptii si contabilitate primara.
+conducere;
 
-denumirea postului:
-operator calculator;
+denumirea postului: 
+manager;
 
-se subordoneaza:
-managerului si managerului financiar
+se subordoneaza: 
+managerului general si administratorului companiei;
 
-subordoneaza:
-toti lucratorii comerciali;
+subordoneaza: 
+toata echipa de lucratori comerciali și casieri;
 
-relatii functionale:
-colegii din depozit pentru preluarea comenzilor;
-colegii de pe magazin din celelalte departamente;
+pregatirea si experienta: 
 
-competentele postului de munca, cunostinte si deprinderi:
-cunoasterea programului in care se lucreaza;
-cunoasterea programului de incasare prezent la casele de marcat.
-cunoasterea produselor;
-atentie dezvoltata pe partea de lucru la calculator;
+pregatirea necesara postului de munca: 
 
-cerinte aptitudinale:
-capacitate de a lua decizii; 
-aptitudine generala de invatare, aptitudini de comunicare; 
-perceptie vizuala, atentie, concentrare, mobilitate, distributivitate, selectivitate; 
-rapiditate, spirit practic, coordonare manuala buna;
-memorie vizuala buna, motivat;
-dorinta de a munci, rezistenta la sarcini repetitive, rezistenta la oboseala; 
-aspect fizic placut;
+cursuri speciale: marketing, vanzari, management organizational, operare pc-office,
 
-cerinte comportamentale:
-pastreaza confidentialitatea secretului de salar;
-punctualitate, atitudine proactiva in munca de echipa si inclinatii catre respect fata de colegi.
-autocontrol mediu, capacitati persuasive; 
-capacitate de coordonare, capacitate de planificare si organizare;
-responsabilitate personala, eficienta personala; 
-spirit de echipa, capacitatea de a munci in echipa; 
-capacitatea de a se descurca in conditii de stres;
-comportament etic, integru si politicos, implicat in activitate;
-comportament civilizat si respectuos fata de colegi,clienti si furnizori;
+participa la cursuri: de leadership, management si vanzari, puse la dispozitie de companie;
+ 
+competentele postului de munca: 
 
-responsabilitati si sarcini: 
-in lipsa managementului companiei raspund de buna desfasurare a activitatii;
-in  lipsa managementului companiei verifica ca marfa intrata in ziua respectiva sa fie scoasa in magazin dupa verificarea preturilor de catre colegii de pe raioane.
-in lipsa managementului companiei verifica periodic raioanele si anunta lucratorii comerciali daca sunt lipsuri mari de marfa in anumite sectoare.
-verifica ca muzica ambientala sa fie pornita.
-verifica nivelul de aglomeratie la casa de marcat si ia decizii in functie de situatie.
-verifica raionul de legume fructe periodic .
-verifica si actualizeaza registrul de casa si raportul de gestiune;
-verifica in fiecare seara buna functionare a aparatelor frigorifice si anunta in caz de defectiune;
-umple la frigiderul de oua cand e cazul;
-ajuta la preluarea marfii cand este nevoie;
-preia incasarile si monetarul de la casiere;
-inchid si deschid magazinul la orele stabilite in program;
-inlocuieste personalul de la mezeluri si de la casa de marcat cand e nevoie;
-verifica personalul la iesirea din tura;
-semneaza produsele cumparate de angajati pentru consum propriu;
-in cazuri speciale participa la umplerea raionului de legume fructe;
-raspunde de comanda de comanda zilnica de paine;
-supravegheaza periodic activitatea din magazin si clientii care ar putea crea pagube;
-participa la curatenia generala de inchidere a magazinului;
-obligatia de a anunta din timp concediul de odihna(minim 2 luni anticipat);
-pastreaza curatenia in magazin;
-obligatia de a nu fuma decat in locurile indicate de conducere.
-parasesc incinta locului de munca doar cu acordul sefului ierarhic;
-obligatia de a nu consuma produse din stocul firmei fara a le plati in prealabil;
-daca folosesc scari ajutatoare pentru a lua marfa la inaltime o fac pe raspundere proprie;
-in caz de boala concediul medical trebuie prezentat la sediul firmei in maxim 48 de ore de la emitere;
-participa la descarcat/preluat marfa impreuna cu persoanele desemnate;
-participa la inventarul anual;
+cunostinte si deprinderi:
+cunostinte de management organizational, vanzari;
+cunoasterea in profunzime a pietei locale fmcg;
+cunoasterea legislatiei in domeniu; 
+stapanirea unor tehnici si instrumente financiar-contabile;
 
-atributii:
-sa foloseasca timpul de munca exclusiv pentru indeplinirea sarcinilor de serviciu, in acest sens, nu se ocupa in timpul de munca de activitati care nu sunt cuprinse in atributiile si indatoririle sale ori nu sunt dispuse de sefi ierarhici;
-sa verifice conformitatea datelor introduse in calculator, cu datele din documentele/mediile primare; 
-sa selecteze si sa verifice datele inainte de a le introduce in calculator;
-sa preia datele de pe documente si sa le introduca in calculator;
-sa corecteze erorile intalnite sau le raporteaza superiorului direct;
-sa asigure buna functionare si intretinerea a echipamentelor cu care lucreaza;
-sa cunoasca elementele ce concura la realizarea operatiei in sine;
-sa semnaleze abaterile de la reguli si contribuie la aplicarea procedurilor de corectare;
-sa asigure necesarul de componente si materiale consumabile;
-sa se preocupe de planificarea activitatii proprii;
-sa participe activ la rezolvarea sarcinilor echipei;
-sa fie cinstit, loial si disciplinat, dand dovada in toate imprejurarile de o atitudine civilizata si corecta fata de toate persoanele cu care vine in contact; 
-sa respecte normele de securitate si sanatate in munca, normele de protectie a mediului;
-sa respecte cu strictete regulile de protectie a muncii si p.s.i. din obiectivul unde desfasoara serviciul; 
-sa acorde ajutor, atat cat este rational posibil, oricarui alt salariat, aflat intr-o situatie de pericol;
-sa-si insuseasca si sa respecte normele si instructiunile de protectie a muncii si masurile de aplicare a acestora;
-sa aduca la cunostinta de indata administratorului accidentele de munca suferite de propria persoana sau de alti angajati;
-sa coopereze cu persoanele cu atributii specifice in domeniul securitatii si sanatatii in munca, atat timp cat este necesar, pentru realizarea oricarei sarcini sau cerinte impuse de autoritate competenta pentru prevenirea accidentelor si bolilor profesionale;
-sa refuze intemeiat executarea unei sarcini de munca daca aceasta ar pune in pericol de accidentare sau imbolnavire profesionala persoana sa sau a celorlalti colegi;
-sa informeze de indata superiorul despre orice deficienta constatata sau eveniment petrecut;
-sa execute alte activitati in legatura cu indeplinirea sarcinilor de serviciu precizate de persoanele care au acest drept.
-sa nu fumeze decat in locurile special amenajate.
+cerinte aptitudinale: 
+nivel de inteligenta generala peste medie (capacitate de sinteza si de analiza, judecata rapida); 
+aptitudine generala de invatare; 
+aptitudini de comunicare; 
+aptitudini de calcul; 
+aptitudinea de a lucra cu documente; 
+planificare si organizare a operatiilor si activitatilor; 
+abilitati de negociere; 
+acordare si transmitere de informatii; 
+vocabular bogat; 
+atentie selectiva, concentrata si distributiva;
+cerinte comportamentale: 
+capacitati persuasive; 
+capacitate de coordonare;
+responsabilitate personala; 
+capacitate de planificare si organizare; 
+eficienta personala; 
+spirit de echipa; 
+comportament etic, integru si politicos; 
+autoritate si libertate organizatorica: 
+are acces la date financiare ale firmei
+solicita si utilizeaza echipamentele/consumabilele puse la dispozitie de firma
 
-responsabilitatile postului:
-raspunde de buna coordonare a activitatii in lipsa managementului companiei.
-raspunde de conditiile de igiena a marfii;
-raspunde de rezolvarea problemelor si de satisfacerea cerintelor clientului;
-respecta instructiunile verbale si scrise date de superiori;
-raspunde de raportarea pierderilor de orice fel (rebuturi, furturi);
-raspunde de corectitudinea datelor introduse in calculator.
+responsabilitati si sarcini:
+ 
+conditii materiale ale muncii: 
+instrumente specifice muncii de birou (imprimanta, telefon mobil)
+sarcini si atributii ale postului de munca:
+stabileste obiectivele generale ale firmei in concordanta cu strategia elaborata de administrator: 
+comunica personalului obiectivele generale si specifice previzionate pentru fiecare departament si urmareste ca acestea sa fie pusa in practica;
 
-sanctiuni pentru nerespectarea fisei postului sau a anexelor acestora in legatura cu confidentialitatea salariului sanctiunea este desfacerea contracului de munca.
+identifica oportunitati de afaceri: 
+identifica modalitati de dezvoltare a serviciilor oferite de firma in concordanta cu tendintele pietei; 
+identifica si atrage resursele necesare pentru implementarea noilor idei de afaceri; 
+reprezinta firma in relatiile protocolare cu furnizorii, clientii si alte organizatii cu impact real/potential asupra rezultatelor firmei: 
+asigura o buna imagine a firmei pe piata; 
+identificarea oportunitatilor de investitie si obtinere de profit; 
+participa la intalniri de afaceri cu furnizori, organisme financiare si institutii guvernamentale din tara si din strainatate;
+dezvolta relatii pozitive cu persoane-cheie in vederea intaririi pozitiei firmei;
 
+asigura managementul firmei: 
+reprezinta organizatia in relatiile cu terte persoane fizice sau juridice in conformitate cu imputernicirea acordata de administrator. 
+gestionarea si gospodarirea patrimoniului organizatiei in interesul acesteia, in conformitate cu imputernicirea acordata de administrator.
+urmarirea indeplinirii conditiilor igienico-sanitare, de protectie a muncii, de prevenire si stingere a incendiilor, prevazute de reglementarile si normele legislative in vigoare; 
+preocuparea pentru conservarea si dezvoltarea bazei materiale a organizatiei; 
+efectuarea de investigatii periodice cu privire la calitatea muncii prestate in cadrul organizatiei (avizarea evaluarilor individuale anuale); 
+controlul si supervizarea activitatii departamentelor de vanzari si marketing, economic, tehnic, resurse umane; 
+urmarirea aplicarii acurate a deciziilor luate si evaluarea efectelor acesteia; 
+asumarea responsabilitatii pentru deciziile eronate sau nefondate, prin suportarea, dupa caz, a unor penalitati banesti; 
+identifica nevoile de recrutare si participa la selectia, integrarea si dezvoltarea managementului firmei;
+asigurarea implicarii in activitatea organizationala a propriei persoane, cat si a personalului din subordine prin crearea unui cadru propice dezvoltarii personale si a unui climat stimulativ al performantelor;
+stabileste obiectivele personalului din subordine, termenele-limita si modalitatile de masurare a gradului de realizare a obiectivelor;
+aproba procedurile de interes general ale firmei (aprovizionare, vanzare);
+dezvolta mijloace de motivare a personalului din subordine; 
+asigura un climat de comunicare si incurajare a initiativei care sa contribuie la atingerea obiectivelor stabilite; 
+evalueaza periodic activitatea personalului din subordine;
+asigura respectarea normelor interne de functionare de catre personalul din subordine;
+stabileste masuri de eficientizare a activitatii personalului din subordine; 
+supravegheaza in permanenta functionarea utilajelor si a instalatiilor din dotarea unitatii.
+verificare procese verbale si facturile rosii de la furnizori si facturi de discount, mezeluri lactate si bauturi;
+reorganizarea display-urilor
+
+comenzi la furnizorii:
+controlul si constructia preturilor de raft la produse de la furnizorii:
+negociere produse promotionale si discount-uri cu furnizorii:
+organizarea echipei in momentele critice ale magazinului;
+participarea la receptionarea marfii, in momentele critice;
+disponibilitate la program prelungit, disponibilitate la program sambata in cazuri critice;
+asigura reteaua de relatii necesara dezvoltarii activitatii firmei: 
+evalueaza potentialul furnizorilor, a produselor si al clientilor;
+stabileste posibile cai de colaborare si decide asupra parteneriatelor strategice; 
+dezvolta relatii pozitive cu personalul firmei in vederea motivarii si a cresterii gradului de implicare in activitatea firmei; 
+raspunde de intocmirea corecta a tuturor dispozitiilor pe care le primeste de la conducerea executiva a societatii.
+
+autoritatea postului:
+solicita rapoarte de activitate si ia masurile necesare in vederea cresterii eficientei activitatii firmei; 
+stabileste prioritatea executarii sarcinilor pentru personalul din subordine; 
+
+sanctiuni pentru nerespectarea fisei postului sau a anexelor acestora: 
+daca este cazul;
 """
 
 # Convert the .txt content to a dictionary
 protocol_dict = {
-    "title": "fisa de post – operator calculator",
-    "denumirea compartimentului": "birou introducere receptii si contabilitate primara",
-    "denumirea postului": "operator calculator",
-    "se subordoneaza": "managerului si managerului financiar",
-    "subordoneaza": "toti lucratorii comerciali",
-    "relatii functionale": ["colegii din depozit pentru preluarea comenzilor", "colegii de pe magazin din celelalte departamente"],
-    "competentele postului de munca, cunostinte si deprinderi": ["cunoasterea programului in care se lucreaza", "cunoasterea programului de incasare prezent la casele de marcat", "cunoasterea produselor", "atentie dezvoltata pe partea de lucru la calculator"],
-    "cerinte aptitudinale": ["capacitate de a lua decizii", "aptitudine generala de invatare", "aptitudini de comunicare", "perceptie vizuala", "atentie", "concentrare", "mobilitate", "distributivitate", "selectivitate", "rapiditate", "spirit practic", "coordonare manuala buna", "memorie vizuala buna", "motivat", "dorinta de a munci", "rezistenta la sarcini repetitive", "rezistenta la oboseala", "aspect fizic placut"],
-    "cerinte comportamentale": ["pastreaza confidentialitatea secretului de salar", "punctualitate", "atitudine proactiva in munca de echipa si inclinatii catre respect fata de colegi", "autocontrol mediu", "capacitati persuasive", "capacitate de coordonare", "capacitate de planificare si organizare", "responsabilitate personala", "eficienta personala", "spirit de echipa", "capacitatea de a munci in echipa", "capacitatea de a se descurca in conditii de stres", "comportament etic", "integru si politicos", "implicat in activitate", "comportament civilizat si respectuos fata de colegi,clienti si furnizori"],
-    "responsabilitati si sarcini": ["in lipsa managementului companiei raspund de buna desfasurare a activitatii", "in lipsa managementului companiei verifica ca marfa intrata in ziua respectiva sa fie scoasa in magazin dupa verificarea preturilor de catre colegii de pe raioane", "verifica ca muzica ambientala sa fie pornita", "verifica nivelul de aglomeratie la casa de marcat si ia decizii in functie de situatie", "verifica raionul de legume fructe periodic", "verifica si actualizeaza registrul de casa si raportul de gestiune", "verifica in fiecare seara buna functionare a aparatelor frigorifice si anunta in caz de defectiune", "umple la frigiderul de oua cand e cazul", "ajuta la preluarea marfii cand este nevoie", "preia incasarile si monetarul de la casiere", "inchid si deschid magazinul la orele stabilite in program", "inlocuieste personalul de la mezeluri si de la casa de marcat cand e nevoie", "verifica personalul la iesirea din tura", "semneaza produsele cumparate de angajati pentru consum propriu", "in cazuri speciale participa la umplerea raionului de legume fructe", "raspunde de comanda de comanda zilnica de paine", "supravegheaza periodic activitatea din magazin si clientii care ar putea crea pagube", "participa la curatenia generala de inchidere a magazinului", "obligatia de a anunta din timp concediul de odihna(minim 2 luni anticipat)", "pastreaza curatenia in magazin", "obligatia de a nu fuma decat in locurile indicate de conducere", "parasesc incinta locului de munca doar cu acordul sefului ierarhic", "obligatia de a nu consuma produse din stocul firmei fara a le plati in prealabil", "daca folosesc scari ajutatoare pentru a lua marfa la inaltime o fac pe raspundere proprie", "in caz de boala concediul medical trebuie prezentat la sediul firmei in maxim 48 de ore de la emitere", "participa la descarcat/preluat marfa impreuna cu persoanele desemnate", "participa la inventarul anual"],
-    "atributii": ["sa foloseasca timpul de munca exclusiv pentru indeplinirea sarcinilor de serviciu", "sa verifice conformitatea datelor introduse in calculator, cu datele din documentele/mediile primare", "sa selecteze si sa verifice datele inainte de a le introduce in calculator", "sa se asigure ca materialele in curs de prelucrare sunt in ordine si bine organizate", "sa pastreze si sa arhiveze informatiile si materialele in format electronic, in conditii de siguranta si securitate", "sa pastreze si sa arhiveze documentele in format hartie, in conditii de siguranta si securitate", "sa ajute in operatiunile de intretinere a echipamentelor de birou si sa semnaleze orice defecţiuni", "sa respecte cu strictete instructiunile de lucru, cu privire la modul de operare a echipamentelor de birou si sa ia masuri pentru prevenirea accidentelor si deteriorarilor", "sa semnaleze orice neconformitate si sa propuna masuri de remediere"],
-    "responsabilitatile postului": [
-        "raspunde de buna coordonare a activitatii in lipsa managementului companiei",
-        "raspunde de conditiile de igiena a marfii",
-        "raspunde de rezolvarea problemelor si de satisfacerea cerintelor clientului",
-        "respecta instructiunile verbale si scrise date de superiori",
-        "raspunde de raportarea pierderilor de orice fel (rebuturi, furturi)",
-        "raspunde de corectitudinea datelor introduse in calculator"
+  "fisa_de_post": "Manager Adjunct",
+  "denumirea_compartimentului": "Conducere",
+  "denumirea_postului": "Manager",
+  "se_subordoneaza": "Managerului general si administratorului companiei",
+  "subordoneaza": "Toata echipa de lucratori comerciali și casieri",
+  "pregatirea_si_experienta": {
+    "pregatirea_necesara_postului_de_munca": [
+      "Cursuri speciale: marketing, vanzari, management organizational, operare pc-office"
     ],
-    "sanctiuni pentru nerespectarea fisei postului sau a anexelor acestora": [
-        "nerespectarea confidentialitatii salariului sanctiunea este desfacerea contraculuI de munca"
-    ]    
-    # Add more key-value pairs based on your .txt content
+    "participa_la_cursuri": "De leadership, management si vanzari, puse la dispozitie de companie"
+  },
+  "competentele_postului_de_munca": {
+    "cunostinte_si_deprinderi": [
+      "Cunostinte de management organizational, vanzari",
+      "Cunoasterea in profunzime a pietei locale fmcg",
+      "Cunoasterea legislatiei in domeniu",
+      "Stapanirea unor tehnici si instrumente financiar-contabile"
+    ],
+    "cerinte_aptitudinale": [
+      "Nivel de inteligenta generala peste medie",
+      "Aptitudine generala de invatare",
+      "Aptitudini de comunicare",
+      "Aptitudini de calcul",
+      "Aptitudinea de a lucra cu documente",
+      "Planificare si organizare a operatiilor si activitatilor",
+      "Abilitati de negociere",
+      "Acordare si transmitere de informatii",
+      "Vocabular bogat",
+      "Atentie selectiva, concentrata si distributiva"
+    ],
+    "cerinte_comportamentale": [
+      "Capacitati persuasive",
+      "Capacitate de coordonare",
+      "Responsabilitate personala",
+      "Capacitate de planificare si organizare",
+      "Eficienta personala",
+      "Spirit de echipa",
+      "Comportament etic, integru si politicos"
+    ]
+  },
+  "autoritate_si_libertate_organizatorica": [
+    "Are acces la date financiare ale firmei",
+    "Solicita si utilizeaza echipamentele/consumabilele puse la dispozitie de firma"
+  ],
+  "responsabilitati_si_sarcini": {
+    "conditii_materiale_ale_muncii": ["Instrumente specifice muncii de birou (imprimanta, telefon mobil)"],
+    "sarcini_si_atributii_ale_postului_de_munca": [
+      "Stabileste obiectivele generale ale firmei in concordanta cu strategia elaborata de administrator",
+      "Comunica personalului obiectivele generale si specifice previzionate pentru fiecare departament si urmareste ca acestea sa fie pusa in practica"
+    ],
+    "identifica_oportunitati_de_afaceri": [
+      "Identifica modalitati de dezvoltare a serviciilor oferite de firma in concordanta cu tendintele pietei",
+      "Identifica si atrage resursele necesare pentru implementarea noilor idei de afaceri",
+      "Reprezinta firma in relatiile protocolare cu furnizorii, clientii si alte organizatii cu impact real/potential asupra rezultatelor firmei",
+      "Asigura o buna imagine a firmei pe piata",
+      "Identificarea oportunitatilor de investitie si obtinere de profit",
+      "Participa la intalniri de afaceri cu furnizori, organisme financiare si institutii guvernamentale din tara si din strainatate",
+      "Dezvolta relatii pozitive cu persoane-cheie in vederea intaririi pozitiei firmei"
+    ],
+    "asigura_managementul_firmei": [
+      "Reprezinta organizatia in relatiile cu terte persoane fizice sau juridice in conformitate cu imputernicirea acordata de administrator",
+      "Gestionarea si gospodarirea patrimoniului organizatiei in interesul acesteia, in conformitate cu imputernicirea acordata de administrator",
+      "Urmarirea indeplinirii conditiilor igienico-sanitare, de protectie a muncii, de prevenire si stingere a incendiilor, prevazute de reglementarile si normele legislative in vigoare",
+      "Preocuparea pentru conservarea si dezvoltarea bazei materiale a organizatiei",
+      "Efectuarea de investigatii periodice cu privire la calitatea muncii prestate in cadrul organizatiei (avizarea evaluarilor individuale anuale)",
+      "Controlul si supervizarea activitatii departamentelor de vanzari si marketing, economic, tehnic, resurse umane",
+      "Urmarirea aplicarii acurate a deciziilor luate si evaluarea efectelor acesteia",
+      "Asumarea responsabilitatii pentru deciziile eronate sau nefondate, prin suportarea, dupa caz, a unor penalitati banesti",
+      "Identifica nevoile de recrutare si participa la selectia, integrarea si dezvoltarea managementului firmei",
+      "Asigurarea implicarii in activitatea organizationala a propriei persoane, cat si a personalului din subordine prin crearea unui cadru propice dezvoltarii personale si a unui climat stimulativ al performantelor",
+      "Stabileste obiectivele personalului din subordine, termenele-limita si modalitatile de masurare a gradului de realizare a obiectivelor",
+      "Aproba procedurile de interes general ale firmei (aprovizionare, vanzare)",
+      "Dezvolta mijloace de motivare a personalului din subordine",
+      "Asigura un climat de comunicare si incurajare a initiativei care sa contribuie la atingerea obiectivelor stabilite",
+      "Evalueaza periodic activitatea personalului din subordine",
+      "Asigura respectarea normelor interne de functionare de catre personalul din subordine",
+      "Stabileste masuri de eficientizare a activitatii personalului din subordine",
+      "Supravegheaza in permanenta functionarea utilajelor si a instalatiilor din dotarea unitatii",
+      "Verificare procese verbale si facturile rosii de la furnizori si facturi de discount, mezeluri lactate si bauturi",
+      "Reorganizarea display-urilor"
+    ],
+    "comenzi_la_furnizorii": [
+      "Controlul si constructia preturilor de raft la produse de la furnizorii",
+      "Negociere produse promotionale si discount-uri cu furnizorii",
+      "Organizarea echipei in momentele critice ale magazinului",
+      "Participarea la receptionarea marfii, in momentele critice",
+      "Disponibilitate la program prelungit, disponibilitate la program sambata in cazuri critice",
+      "Asigura reteaua de relatii necesara dezvoltarii activitatii firmei",
+      "Evalueaza potentialul furnizorilor, a produselor si al clientilor",
+      "Stabileste posibile cai de colaborare si decide asupra parteneriatelor strategice",
+      "Dezvolta relatii pozitive cu personalul firmei in vederea motivarii si a cresterii gradului de implicare in activitatea firmei",
+      "Raspunde de intocmirea corecta a tuturor dispozitiilor pe care le primeste de la conducerea executiva a societatii"
+    ],
+    "autoritatea_postului": [
+      "Solicita rapoarte de activitate si ia masurile necesare in vederea cresterii eficientei activitatii firmei",
+      "Stabileste prioritatea executarii sarcinilor pentru personalul din subordine"
+    ],
+    "sanctiuni_pentru_nerespectarea_fisei_postului_sau_a_anexelor_acestora": "Daca este cazul"
+  }
 }
 
 # Convert the dictionary to a JSON string
