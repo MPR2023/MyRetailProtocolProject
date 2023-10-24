@@ -79,11 +79,9 @@ def fetch_protocol_based_on_location(request):
         
         # Your logic to find the protocol based on beacon_name and beacon_address
         if beacon_name == "MyBLEDevice" and beacon_address == "94:B5:55:C0:6B:7A":
-            protocol_file_path = "C:\\Users\\paulm\\Desktop\\Github\\MyRetailProtocolProject\\protocols\\admin\\protocol_for_office_1.txt"     
-        if protocol_file_path:
-            with open(protocol_file_path, 'r') as f:
-                protocol_data = f.read()
-            return JsonResponse({'protocol': protocol_data})
+            protocol_data = Protocol.objects.filter(beacon_name=beacon_name, beacon_address=beacon_address).first()
+            if protocol_data:
+                return JsonResponse({'protocol': protocol_data.description})
         else:
             return JsonResponse({'error': 'Beacon not recognized'})
     except Exception as e:

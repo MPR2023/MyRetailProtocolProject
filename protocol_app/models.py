@@ -30,6 +30,9 @@ class Protocol(models.Model):
     last_updated = models.DateTimeField(auto_now=True)
     access_level = models.CharField(max_length=20, choices=ACCESS_LEVEL_CHOICES, default='worker')
 
+    beacon_name = models.CharField(max_length=50, null=True, blank=True)
+    beacon_address = models.CharField(max_length=50, null=True, blank=True)
+
     def __str__(self):
         return self.title
     

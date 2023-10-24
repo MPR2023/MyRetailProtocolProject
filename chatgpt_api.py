@@ -6,6 +6,7 @@ from typing import cast
 import os
 import logging
 import openai
+from protocol_app.models import Protocol
 
 # Initialize logging
 logging.basicConfig(level=logging.DEBUG)
@@ -19,16 +20,13 @@ def read_protocol_file(file_path):
     with open(file_path, 'r') as file:
         return file.read()
 
-def fetch_protocols_from_files(role):
-    directory = r'C:\Users\paulm\Desktop\Github\MyRetailProtocolProject\protocols\{}'.format(role)
+def fetch_protocols_from_db(role):
+    protocols = Protocol.objects.filter(access_level=role)
     formatted_protocols = ""
     
-    for filename in os.listdir(directory):
-        if filename.endswith('.txt'):
-            file_path = os.path.join(directory, filename)
-            protocol_content = read_protocol_file(file_path)
-            formatted_protocols += f"{filename}:\n{protocol_content}\n\n"
-            
+    for protocol in protocols:
+        formatted_protocols += f"{protocol.title}:\n{protocol.description}\n\n"
+        
     return formatted_protocols.strip()
 
 def chat_with_gpt3_function(request: Request):
@@ -38,7 +36,7 @@ def chat_with_gpt3_function(request: Request):
         payload = cast(dict, request.data)
         prompt: str = payload.get("user_input", "")
         user_role: str = payload.get("user_role", "worker")
-        protocols: str = fetch_protocols_from_files(user_role)
+        protocols: str = fetch_protocols_from_db(user_role)
         prompt = f"Protocols:\n{protocols}\n\nUser Question: {prompt}"
 
         logging.debug(f"Received user_input: {prompt}, user_role: {user_role}")
