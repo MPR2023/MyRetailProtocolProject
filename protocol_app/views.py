@@ -15,6 +15,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from users.models import CustomUser
 from typing import Union
+from pymongo import MongoClient
 from django.contrib.auth.models import AbstractBaseUser, AnonymousUser
 import logging
 import json
@@ -77,11 +78,17 @@ def fetch_protocol_based_on_location(request):
         beacon_name = data.get('beacon', {}).get('name')
         beacon_address = data.get('beacon', {}).get('address')
         
-        # Your logic to find the protocol based on beacon_name and beacon_address
-        if beacon_name == "MyBLEDevice" and beacon_address == "94:B5:55:C0:6B:7A":
-            protocol_data = Protocol.objects.filter(beacon_name=beacon_name, beacon_address=beacon_address).first()
-            if protocol_data:
-                return JsonResponse({'protocol': protocol_data.description})
+        # Connect to MongoDB
+        client = MongoClient("mongodb+srv://paulmotorca:Zizou2003@cognisteer.eykykjc.mongodb.net/")
+        db = client['CogniSteer']
+        collection = db['protocols']
+
+        # Query MongoDB based on beacon_name and beacon_address
+        protocol_data = collection.find_one({"beacon_name": beacon_name, "beacon_address": beacon_address})
+        
+        if protocol_data:
+            protocol_data['_id'] = str(protocol_data['_id'])  # Convert ObjectId to string
+            return JsonResponse(protocol_data)
         else:
             return JsonResponse({'error': 'Beacon not recognized'})
     except Exception as e:
