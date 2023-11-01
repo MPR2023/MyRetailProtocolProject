@@ -12,6 +12,7 @@ import re
 import json
 import logging
 from threading import Lock
+import sqlite3
 
 # Initialize logging
 logging.basicConfig(level=logging.DEBUG)
@@ -101,3 +102,30 @@ def chat_with_gpt3_function(request: Request):
             return JsonResponse({"error": f"An error occurred: {e}"})
     else:
         return JsonResponse({"error": "Only POST method is allowed."})
+    
+
+def generate_sql_query(interpreted_content: str) -> str:
+    try:
+        sql_generation = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": f"Generate an SQL query for this: {interpreted_content}"}
+            ]
+        )
+        sql_query: str = sql_generation['choices'][0]['message']['content']
+        return sql_query.strip()  # Remove any extra spaces or newlines
+    except Exception as e:
+        return f"An error occurred while generating the SQL query: {e}"
+    
+
+
+def execute_sql_query(sql_query: str):
+    try:
+        conn = sqlite3.connect('your_database_name.db')
+        cursor = conn.cursor()
+        cursor.execute(sql_query)
+        results = cursor.fetchall()
+        return results
+    except Exception as e:
+        return f"An error occurred while executing the SQL query: {e}"
