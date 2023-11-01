@@ -35,10 +35,10 @@ from protocol_app.models import Protocol  # Import your model
 
 def fetch_protocol_from_db(key_terms: str) -> str:
     try:
-        protocol_data = Protocol.objects.filter(title__icontains=key_terms).first()
+        protocol_data = Protocol.objects.filter(title__icontains=key_terms).all()
         if protocol_data:
-            protocol_data_json = json.dumps(model_to_dict(protocol_data), default=str)
-            return protocol_data_json
+            protocol_data_dicts = [model_to_dict(protocol) for protocol in protocol_data]
+            return protocol_data_dicts
         else:
             return "No data found"
     except Exception as e:
@@ -58,7 +58,7 @@ def chat_with_gpt3_function(request: Request):
                 model="gpt-3.5-turbo",
                 messages=[
                     {"role": "system", "content": "You are a helpful assistant."},
-                    {"role": "user", "content": f"Interpret this question: {user_question}"}
+                    {"role": "user", "content": f"Interpret this question and extract the verbs and nouns as key terms: {user_question}"}
                 ]
             )
             interpreted_content: str = interpretation['choices'][0]['message']['content']
@@ -68,21 +68,17 @@ def chat_with_gpt3_function(request: Request):
         except Exception as e:
             return JsonResponse({"error": f"An error occurred while interpreting the question: {e}"})
         
-        key_terms = [term for term in interpreted_content.split() if term.lower() in ['protocol']]
+        key_terms = [term for term in interpreted_content.split() if term.lower() in ['Protocol','Scop','Pasi']]
         key_terms_str = ' '.join(key_terms)
         
         # Step 2: Dynamic Query Construction & Execution
-        protocol_answer = fetch_protocol_from_db(key_terms_str)
+        protocol_dicts = fetch_protocol_from_db(key_terms_str)
 
-        # Parse the string into a dictionary
-        protocol_dict = json.loads(protocol_answer)
-
-        # Extract the file path
-        file_path = protocol_dict['file']
-
-        # Assuming protocol_answer is the path to the file
-        with open(file_path, 'r') as file:
-            file_content = file.read()
+        file_content = ""
+        for protocol_dict in protocol_dicts:
+            file_path = protocol_dict['file'].path
+            with open(file_path, 'r') as file:
+                file_content += file.read()
         
         with conversation_history_lock:  # Added for concurrency
             conversation_history.append({"role": "user", "content": f"User Question: {user_question}"})
@@ -91,7 +87,7 @@ def chat_with_gpt3_function(request: Request):
         messages = [
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": f"User Question: {user_question}"},
-            {"role": "assistant", "content": f"Database Information: {protocol_answer}"},
+            {"role": "assistant", "content": f"Database Information: {protocol_dicts}"},
             {"role": "assistant", "content": f"File Content: {file_content}"},
             {"role": "user", "content": "Please interpret the content of the file in the language of the file."}        
         ] + conversation_history
@@ -134,7 +130,7 @@ def generate_sql_query(interpreted_content: str) -> str:
 
 def execute_sql_query(sql_query: str):
     try:
-        conn = sqlite3.connect('your_database_name.db')
+        conn = sqlite3.connect('db.sqlite3')
         cursor = conn.cursor()
         cursor.execute(sql_query)
         results = cursor.fetchall()
