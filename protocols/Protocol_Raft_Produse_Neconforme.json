@@ -1,0 +1,13 @@
+[
+    {
+    "Protocol":"Raft Produse Neconforme",
+    "Scop":"Acest protocol ajută la identificarea și gestionarea produselor neconforme pentru a asigura calitatea mărfurilor de pe rafturi",
+    "Pasi": {
+        "Identificarea Produselor Neconforme":"Daca gasiti produse neconforme, anuntati reprezentantul",
+        "Inregistrarea in Fisa Digitala":"Reprezentantul va nota produsele neconforme in fisa digitala si le va aseza in raftul pentru produse neconforme",
+        "Verificare la Sfarsitul Turei":"Reprezentantul va verifica raftul la sfarsitul fiecarei ture pentru a vedea dacă există produse neconforme in plus fata de cele inregistrate",
+        "Investigarea Produselor Neconforme Suplimentare":"Daca sunt gasite produse in plus, reprezentantul va incerca sa afle de unde provin si cine le-a asezat in raft.",
+        "Revizuirea Lunara":"Managerul va verifica fisa cu produse neconforme la final de luna. Compania va acoperi valoarea acestora pana la 50 de RON pentru fiecare tura, iar restul va fi impartit intre angajati."
+        }
+    }
+]

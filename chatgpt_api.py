@@ -33,11 +33,9 @@ conversation_history = []
 
 from protocol_app.models import Protocol  # Import your model
 
-def fetch_protocol_from_db(question: str) -> str:
+def fetch_protocol_from_db(key_terms: str) -> str:
     try:
-        # Use Django ORM to query the SQLite database
-        protocol_data = Protocol.objects.filter(title__icontains=question).first()
-        
+        protocol_data = Protocol.objects.filter(title__icontains=key_terms).first()
         if protocol_data:
             protocol_data_json = json.dumps(model_to_dict(protocol_data), default=str)
             return protocol_data_json
@@ -70,19 +68,32 @@ def chat_with_gpt3_function(request: Request):
         except Exception as e:
             return JsonResponse({"error": f"An error occurred while interpreting the question: {e}"})
         
-        key_terms_str = ' '.join(key_terms) if isinstance(key_terms, list) else str(key_terms)
+        key_terms = [term for term in interpreted_content.split() if term.lower() in ['protocol']]
+        key_terms_str = ' '.join(key_terms)
         
         # Step 2: Dynamic Query Construction & Execution
         protocol_answer = fetch_protocol_from_db(key_terms_str)
+
+        # Parse the string into a dictionary
+        protocol_dict = json.loads(protocol_answer)
+
+        # Extract the file path
+        file_path = protocol_dict['file']
+
+        # Assuming protocol_answer is the path to the file
+        with open(file_path, 'r') as file:
+            file_content = file.read()
         
         with conversation_history_lock:  # Added for concurrency
             conversation_history.append({"role": "user", "content": f"User Question: {user_question}"})
         
         # Step 3: Prepare messages for GPT-3 API and generate response
         messages = [
-            {"role": "system", "content": "You are a helpful assistant. Use the following protocols to answer the user's question."},
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": f"User Question: {user_question}"},
             {"role": "assistant", "content": f"Database Information: {protocol_answer}"},
-            {"role": "system", "content": "Please use the specific information from the database to answer the user's questions."}
+            {"role": "assistant", "content": f"File Content: {file_content}"},
+            {"role": "user", "content": "Please interpret the content of the file in the language of the file."}        
         ] + conversation_history
         
         try:
@@ -102,6 +113,7 @@ def chat_with_gpt3_function(request: Request):
             return JsonResponse({"error": f"An error occurred: {e}"})
     else:
         return JsonResponse({"error": "Only POST method is allowed."})
+
     
 
 def generate_sql_query(interpreted_content: str) -> str:
