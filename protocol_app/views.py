@@ -29,6 +29,7 @@ def home(request):
 
 @silk_profile(name='My View Profile')
 def my_view(request):
+    logger.debug("This is a debug message")
     return render(request, 'template_name.html')
 
 @api_view(['GET', 'POST'])

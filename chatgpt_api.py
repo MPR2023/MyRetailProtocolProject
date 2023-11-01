@@ -7,82 +7,97 @@ import os
 import logging
 import openai
 from protocol_app.models import Protocol
-from pymongo import MongoClient
+from django.forms.models import model_to_dict
 import re
+import json
+import logging
+from threading import Lock
 
 # Initialize logging
 logging.basicConfig(level=logging.DEBUG)
+
+logger = logging.getLogger(__name__)
+
+# Initialize a lock for the conversation_history
+conversation_history_lock = Lock()  # Added for concurrency
+
 
 # Load API key from environment file
 config = Config("C:/Users/paulm/Desktop/Github/MyRetailProtocolProject/.env")
 api_key = config("GPT3_API_KEY")
 openai.api_key = api_key
 
-def read_protocol_file(file_path):
-    with open(file_path, 'r') as file:
-        return file.read()
+# Initialize an empty list to hold the conversation history
+conversation_history = []
 
-#def fetch_protocols_from_db(role):
-    protocols = Protocol.objects.filter(access_level=role)
-    formatted_protocols = ""
-    
-    for protocol in protocols:
-        formatted_protocols += f"{protocol.title}:\n{protocol.description}\n\n"
+from protocol_app.models import Protocol  # Import your model
+
+def fetch_protocol_from_db(question: str) -> str:
+    try:
+        # Use Django ORM to query the SQLite database
+        protocol_data = Protocol.objects.filter(title__icontains=question).first()
         
-    return formatted_protocols.strip()
-
-def fetch_protocol_from_db(question: str):
-    # Connect to MongoDB
-    client = MongoClient("mongodb+srv://paulmotorca:Zizou2003@cognisteer.eykykjc.mongodb.net/")
-    db = client['CogniSteer']
-    collection = db['protocols']
+        if protocol_data:
+            protocol_data_json = json.dumps(model_to_dict(protocol_data), default=str)
+            return protocol_data_json
+        else:
+            return "No data found"
+    except Exception as e:
+        return f"An error occurred: {e}"
     
-    # Prepare the question for regex search (escape special characters)
-    question = re.escape(question)
-    
-    # Query the database based on the user's question
-    protocol_data = collection.find_one({"titlul": {"$regex": question, "$options": 'i'}})
-    
-    if protocol_data:
-        # Extract relevant information from the protocol_data dictionary
-        responsibilities = protocol_data.get('responsabilitati si sarcini', {}).get('sarcini si atributii ale postului de munca', [])
-        return "\n".join(responsibilities)
-    else:
-        return 'No matching protocol found in the database.'
-
-# Test the function
-print(fetch_protocol_from_db("manager adjunct"))
-
 def chat_with_gpt3_function(request: Request):
+    logger.debug("This is a debug message in my custom function")
+    global conversation_history  # Use the global conversation history
+    
     if request.method == 'POST':
-        logging.debug("Received POST request.")
-
         payload = cast(dict, request.data)
         user_question: str = payload.get("user_input", "")
         
-        # Fetch the relevant protocol information based on the user's question
-        protocol_answer = fetch_protocol_from_db(user_question)
+        try:
+            # Step 1: Interpret User's Question with GPT-3
+            interpretation = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": "You are a helpful assistant."},
+                    {"role": "user", "content": f"Interpret this question: {user_question}"}
+                ]
+            )
+            interpreted_content: str = interpretation['choices'][0]['message']['content']
+            key_terms = interpreted_content.split()
+            logging.debug("Interpreted Content: %s", interpreted_content)  # Added debug line
+            logging.debug("Key Terms: %s", key_terms)  # Added debug line
+        except Exception as e:
+            return JsonResponse({"error": f"An error occurred while interpreting the question: {e}"})
         
-        if protocol_answer:
-            # Use the fetched protocol as part of the prompt for ChatGPT
-            prompt = f"Protocol Information: {protocol_answer}\n\nUser Question: {user_question}"
+        key_terms_str = ' '.join(key_terms) if isinstance(key_terms, list) else str(key_terms)
+        
+        # Step 2: Dynamic Query Construction & Execution
+        protocol_answer = fetch_protocol_from_db(key_terms_str)
+        
+        with conversation_history_lock:  # Added for concurrency
+            conversation_history.append({"role": "user", "content": f"User Question: {user_question}"})
+        
+        # Step 3: Prepare messages for GPT-3 API and generate response
+        messages = [
+            {"role": "system", "content": "You are a helpful assistant. Use the following protocols to answer the user's question."},
+            {"role": "assistant", "content": f"Database Information: {protocol_answer}"},
+            {"role": "system", "content": "Please use the specific information from the database to answer the user's questions."}
+        ] + conversation_history
+        
+        try:
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=messages
+            )
             
-            try:
-                response = openai.ChatCompletion.create(
-                    model="gpt-3.5-turbo",
-                    messages=[
-                        {"role": "system", "content": "You are a helpful assistant knowledgeable about Lelia's protocols."},
-                        {"role": "user", "content": prompt}
-                    ]
-                )
-                assert isinstance(response, dict)
-                message_content: str = response['choices'][0]['message']['content']
-                return JsonResponse({"response": message_content.strip()})
-                
-            except Exception as e:
-                logging.error(f"An error occurred while communicating with the GPT-3 API: {e}")
-                return JsonResponse({"error": f"An error occurred while communicating with the GPT-3 API: {e}"})
-        else:
-            return JsonResponse({"error": "No matching protocol found in the database"})
+            message_content: str = response['choices'][0]['message']['content']
+            logging.debug("Message Content: %s", message_content)  # Added debug line
+            
+            conversation_history.append({"role": "assistant", "content": message_content})
+            
+            return JsonResponse({"response": message_content.strip(), "conversation_history": conversation_history})
+            
+        except Exception as e:
+            return JsonResponse({"error": f"An error occurred: {e}"})
     else:
         return JsonResponse({"error": "Only POST method is allowed."})
