@@ -14,6 +14,7 @@ import logging
 from threading import Lock
 import sqlite3
 import spacy
+from django.db.models import Q
 
 # Initialize spaCy
 nlp = spacy.load("en_core_web_sm")
@@ -35,17 +36,26 @@ openai.api_key = api_key
 # Initialize an empty list to hold the conversation history
 conversation_history = []
 
-from protocol_app.models import Protocol  # Import your model
-
 def fetch_protocol_from_db(key_terms: str) -> str:
     try:
-        protocol_data = Protocol.objects.filter(title__icontains=key_terms).all()
+        key_terms_list = key_terms.split()
+        # Start with an empty Q object
+        query = Q()
+        # Loop through each term and add it to the query with an OR condition
+        for term in key_terms_list:
+            query |= Q(title__icontains=term)
+        # Use the constructed query to filter the protocols
+        protocol_data = Protocol.objects.filter(query).all()
+        # If protocols are found, convert them to dictionaries
+        logger.debug(f"Fetched {len(protocol_data)} protocols for key terms '{key_terms}'")
         if protocol_data:
             protocol_data_dicts = [model_to_dict(protocol) for protocol in protocol_data]
             return protocol_data_dicts
         else:
+            logger.warning(f"No protocols found for key terms '{key_terms}'")
             return "No data found"
     except Exception as e:
+        logger.error(f"An error occurred while fetching protocols: {e}")
         return f"An error occurred: {e}"
     
 def extract_key_terms(text):
@@ -75,11 +85,20 @@ def chat_with_gpt3_function(request: Request):
         # Step 2: Dynamic Query Construction & Execution
         protocol_dicts = fetch_protocol_from_db(key_terms_str)
 
+        # Check if protocol_dicts is a list before proceeding
+        
         file_content = ""
-        for protocol_dict in protocol_dicts:
-            file_path = protocol_dict['file'].path
-            with open(file_path, 'r') as file:
-                file_content += file.read()
+        if isinstance(protocol_dicts, list):
+            for protocol_dict in protocol_dicts:
+                # Make sure that 'file' is a key in the dictionary and it has a 'path' attribute
+                if 'file' in protocol_dict and hasattr(protocol_dict['file'], 'path'):
+                    file_path = protocol_dict['file'].path
+                    with open(file_path, 'r') as file:
+                        file_content += file.read()
+        else:
+            # Handle the case where protocol_dicts is not a list
+            logger.error(f"Expected a list but got {type(protocol_dicts)}: {protocol_dicts}")
+            return JsonResponse({"error": "No valid protocol data found."})
         
         with conversation_history_lock:  # Added for concurrency
             conversation_history.append({"role": "user", "content": f"User Question: {user_question}"})
