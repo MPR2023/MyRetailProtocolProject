@@ -13,6 +13,10 @@ import json
 import logging
 from threading import Lock
 import sqlite3
+import spacy
+
+# Initialize spaCy
+nlp = spacy.load("en_core_web_sm")
 
 # Initialize logging
 logging.basicConfig(level=logging.DEBUG)
@@ -44,6 +48,19 @@ def fetch_protocol_from_db(key_terms: str) -> str:
     except Exception as e:
         return f"An error occurred: {e}"
     
+def extract_key_terms(text):
+    # Process the text using the spaCy NLP model
+    doc = nlp(text)
+    
+    # Extract entities and noun chunks as key terms
+    entities = [ent.text for ent in doc.ents]
+    noun_chunks = [chunk.text for chunk in doc.noun_chunks]
+
+    # Combine entities and noun chunks, avoiding duplicates
+    key_terms = list(set(entities + noun_chunks))
+    
+    return key_terms
+    
 def chat_with_gpt3_function(request: Request):
     logger.debug("This is a debug message in my custom function")
     global conversation_history  # Use the global conversation history
@@ -52,23 +69,7 @@ def chat_with_gpt3_function(request: Request):
         payload = cast(dict, request.data)
         user_question: str = payload.get("user_input", "")
         
-        try:
-            # Step 1: Interpret User's Question with GPT-3
-            interpretation = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                messages=[
-                    {"role": "system", "content": "You are a helpful assistant."},
-                    {"role": "user", "content": f"Interpret this question and extract the verbs and nouns as key terms: {user_question}"}
-                ]
-            )
-            interpreted_content: str = interpretation['choices'][0]['message']['content']
-            key_terms = interpreted_content.split()
-            logging.debug("Interpreted Content: %s", interpreted_content)  # Added debug line
-            logging.debug("Key Terms: %s", key_terms)  # Added debug line
-        except Exception as e:
-            return JsonResponse({"error": f"An error occurred while interpreting the question: {e}"})
-        
-        key_terms = [term for term in interpreted_content.split() if term.lower() in ['Protocol','Scop','Pasi']]
+        key_terms = extract_key_terms(user_question)
         key_terms_str = ' '.join(key_terms)
         
         # Step 2: Dynamic Query Construction & Execution
