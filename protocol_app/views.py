@@ -20,6 +20,7 @@ from django.contrib.auth.models import AbstractBaseUser, AnonymousUser
 import logging
 import json
 import os
+from rest_framework.decorators import action
 
 # Initialize logger
 logger = logging.getLogger(__name__)
@@ -148,6 +149,12 @@ class ProtocolViewSet(viewsets.ModelViewSet):
             return []  # or some error response
 
         return queryset
+    
+    @action(detail=False, methods=['get'])
+    def training_data(self, request):
+        protocols = self.get_queryset()
+        serializer = ProtocolSerializer(protocols, many=True)
+        return Response(serializer.data)
         
     @silk_profile(name='List Protocols')
     def list(self, request, *args, **kwargs):

@@ -11,11 +11,13 @@ class ProtocolSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class ProtocolReviewSerializer(serializers.ModelSerializer):
+    
     class Meta:
         model = ProtocolReview
         fields = '__all__'
 
 class CustomUserSerializer(serializers.ModelSerializer):
+    
     class Meta:
         model = get_user_model()
         fields = ('id', 'email')

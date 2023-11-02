@@ -1,13 +1,12 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from . import views
+from .views import ProtocolViewSet, chat_with_gpt3, fetch_protocol_based_on_location
 
 router = DefaultRouter()
-router.register(r'protocols', views.ProtocolViewSet)
+router.register(r'protocols', ProtocolViewSet)  # Register ProtocolViewSet with the router
 
 urlpatterns = [
-    path('chat/', views.chat_with_gpt3, name='chat_with_gpt3'),  # Keeping only this
-    path('api/', include(router.urls)),
-    path('', include(router.urls)),
-    path('fetch_protocol_based_on_location/', views.fetch_protocol_based_on_location, name='fetch_protocol_based_on_location/'),
+    path('chat/', chat_with_gpt3, name='chat_with_gpt3'),
+    path('fetch_protocol_based_on_location/', fetch_protocol_based_on_location, name='fetch_protocol_based_on_location'),
+    path('', include(router.urls)),  # Include the router URLs
 ]
