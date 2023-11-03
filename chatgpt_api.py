@@ -15,6 +15,8 @@ from threading import Lock
 import sqlite3
 import spacy
 from django.db.models import Q
+from fuzzywuzzy import process
+
 
 # Initialize spaCy
 nlp = spacy.load("en_core_web_sm")
@@ -38,22 +40,45 @@ conversation_history = []
 
 def fetch_protocol_from_db(key_terms: str) -> str:
     try:
-        key_terms_list = key_terms.split()
-        # Start with an empty Q object
+        # Fetch all protocol titles from the database
+        all_protocol_titles = [protocol.title for protocol in Protocol.objects.all()]
+        
+        # Find the best match for each key term using fuzzy matching
+        matches = []
+        for term in key_terms.split():
+            match, score = process.extractOne(term, all_protocol_titles)
+            if score >= 80:  # You can adjust the threshold as needed
+                matches.append(match)
+        
+        # Use the matches to filter the protocols
         query = Q()
-        # Loop through each term and add it to the query with an OR condition
-        for term in key_terms_list:
-            query |= Q(title__icontains=term)
-        # Use the constructed query to filter the protocols
+        for match in matches:
+            query |= Q(title__icontains=match)
         protocol_data = Protocol.objects.filter(query).all()
+
         # If protocols are found, convert them to dictionaries
         logger.debug(f"Fetched {len(protocol_data)} protocols for key terms '{key_terms}'")
+
         if protocol_data:
             protocol_data_dicts = [model_to_dict(protocol) for protocol in protocol_data]
             return protocol_data_dicts
+        
         else:
-            logger.warning(f"No protocols found for key terms '{key_terms}'")
-            return "No data found"
+            # If no matches in titles, search within the content of the protocols
+            protocol_data_dicts = []
+            for protocol in Protocol.objects.all():
+                with open(protocol.file.path, 'r') as file:
+                    content = json.load(file)
+                # Check if any key term is in the content
+                if any(term.lower() in json.dumps(content).lower() for term in key_terms.split()):
+                    protocol_data_dicts.append(model_to_dict(protocol))
+            
+            if protocol_data_dicts:
+                logger.debug(f"Fetched {len(protocol_data_dicts)} protocols for key terms '{key_terms}' within content")
+                return protocol_data_dicts
+            else:
+                logger.warning(f"No protocols found for key terms '{key_terms}' in titles or content")
+                return "No data found"
     except Exception as e:
         logger.error(f"An error occurred while fetching protocols: {e}")
         return f"An error occurred: {e}"
